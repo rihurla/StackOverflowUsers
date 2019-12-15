@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		018484E623A635FA005CD618 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484E523A635FA005CD618 /* ViewControllerFactory.swift */; };
+		018484E923A637C1005CD618 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484E823A637C1005CD618 /* UserListViewModel.swift */; };
+		018484EB23A637C9005CD618 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484EA23A637C9005CD618 /* UserListViewController.swift */; };
+		018484EE23A63BFD005CD618 /* StackOverflowRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484ED23A63BFD005CD618 /* StackOverflowRepository.swift */; };
+		018484F123A63F0A005CD618 /* StackOverflowUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484F023A63F0A005CD618 /* StackOverflowUser.swift */; };
+		018484F323A647AB005CD618 /* ServiceUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484F223A647AB005CD618 /* ServiceUrls.swift */; };
+		018484F623A65261005CD618 /* URLComponentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484F523A65261005CD618 /* URLComponentsExtension.swift */; };
+		018484F923A65836005CD618 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484F823A65836005CD618 /* RepositoryService.swift */; };
+		018484FB23A658B9005CD618 /* RepositoryServiceMocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484FA23A658B9005CD618 /* RepositoryServiceMocked.swift */; };
+		018484FD23A65B9A005CD618 /* StackOverflowRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484FC23A65B9A005CD618 /* StackOverflowRepositoryTests.swift */; };
+		018484FF23A65FA7005CD618 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484FE23A65FA7005CD618 /* RepositoryError.swift */; };
+		0184850123A66015005CD618 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0184850023A66015005CD618 /* Localizable.strings */; };
 		01B0266723A6301200D6062E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B0266623A6301200D6062E /* AppDelegate.swift */; };
 		01B0266923A6301200D6062E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B0266823A6301200D6062E /* SceneDelegate.swift */; };
 		01B0266B23A6301200D6062E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B0266A23A6301200D6062E /* ViewController.swift */; };
@@ -26,6 +38,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		018484E523A635FA005CD618 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		018484E823A637C1005CD618 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		018484EA23A637C9005CD618 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		018484ED23A63BFD005CD618 /* StackOverflowRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowRepository.swift; sourceTree = "<group>"; };
+		018484F023A63F0A005CD618 /* StackOverflowUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowUser.swift; sourceTree = "<group>"; };
+		018484F223A647AB005CD618 /* ServiceUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceUrls.swift; sourceTree = "<group>"; };
+		018484F523A65261005CD618 /* URLComponentsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentsExtension.swift; sourceTree = "<group>"; };
+		018484F823A65836005CD618 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
+		018484FA23A658B9005CD618 /* RepositoryServiceMocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryServiceMocked.swift; sourceTree = "<group>"; };
+		018484FC23A65B9A005CD618 /* StackOverflowRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowRepositoryTests.swift; sourceTree = "<group>"; };
+		018484FE23A65FA7005CD618 /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
+		0184850023A66015005CD618 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		01B0266323A6301200D6062E /* StackOverflowUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflowUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01B0266623A6301200D6062E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01B0266823A6301200D6062E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +80,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		018484E423A635A3005CD618 /* Management */ = {
+			isa = PBXGroup;
+			children = (
+				018484E523A635FA005CD618 /* ViewControllerFactory.swift */,
+			);
+			path = Management;
+			sourceTree = "<group>";
+		};
+		018484E723A63775005CD618 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				018484E823A637C1005CD618 /* UserListViewModel.swift */,
+				018484EA23A637C9005CD618 /* UserListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		018484EC23A6394B005CD618 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				018484FE23A65FA7005CD618 /* RepositoryError.swift */,
+				018484F223A647AB005CD618 /* ServiceUrls.swift */,
+				018484ED23A63BFD005CD618 /* StackOverflowRepository.swift */,
+				018484F823A65836005CD618 /* RepositoryService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		018484EF23A63ED5005CD618 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				018484F023A63F0A005CD618 /* StackOverflowUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		018484F423A65247005CD618 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				018484F523A65261005CD618 /* URLComponentsExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		018484F723A6540C005CD618 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				018484FA23A658B9005CD618 /* RepositoryServiceMocked.swift */,
+				018484FC23A65B9A005CD618 /* StackOverflowRepositoryTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		01B0265A23A6301200D6062E = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +154,18 @@
 		01B0266523A6301200D6062E /* StackOverflowUsers */ = {
 			isa = PBXGroup;
 			children = (
+				018484F423A65247005CD618 /* Extensions */,
+				018484EF23A63ED5005CD618 /* Models */,
+				018484EC23A6394B005CD618 /* Service */,
+				018484E423A635A3005CD618 /* Management */,
+				018484E723A63775005CD618 /* View */,
 				01B0266623A6301200D6062E /* AppDelegate.swift */,
 				01B0266823A6301200D6062E /* SceneDelegate.swift */,
 				01B0266A23A6301200D6062E /* ViewController.swift */,
 				01B0266F23A6301300D6062E /* Assets.xcassets */,
 				01B0267123A6301300D6062E /* LaunchScreen.storyboard */,
 				01B0267423A6301300D6062E /* Info.plist */,
+				0184850023A66015005CD618 /* Localizable.strings */,
 			);
 			path = StackOverflowUsers;
 			sourceTree = "<group>";
@@ -90,6 +173,7 @@
 		01B0267C23A6301300D6062E /* StackOverflowUsersTests */ = {
 			isa = PBXGroup;
 			children = (
+				018484F723A6540C005CD618 /* Service */,
 				01B0267D23A6301300D6062E /* StackOverflowUsersTests.swift */,
 				01B0267F23A6301300D6062E /* Info.plist */,
 			);
@@ -178,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01B0267323A6301300D6062E /* LaunchScreen.storyboard in Resources */,
+				0184850123A66015005CD618 /* Localizable.strings in Resources */,
 				01B0267023A6301300D6062E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,9 +281,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				018484F323A647AB005CD618 /* ServiceUrls.swift in Sources */,
+				018484F923A65836005CD618 /* RepositoryService.swift in Sources */,
+				018484FF23A65FA7005CD618 /* RepositoryError.swift in Sources */,
+				018484F623A65261005CD618 /* URLComponentsExtension.swift in Sources */,
 				01B0266B23A6301200D6062E /* ViewController.swift in Sources */,
+				018484E623A635FA005CD618 /* ViewControllerFactory.swift in Sources */,
 				01B0266723A6301200D6062E /* AppDelegate.swift in Sources */,
+				018484F123A63F0A005CD618 /* StackOverflowUser.swift in Sources */,
 				01B0266923A6301200D6062E /* SceneDelegate.swift in Sources */,
+				018484E923A637C1005CD618 /* UserListViewModel.swift in Sources */,
+				018484EE23A63BFD005CD618 /* StackOverflowRepository.swift in Sources */,
+				018484EB23A637C9005CD618 /* UserListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				018484FD23A65B9A005CD618 /* StackOverflowRepositoryTests.swift in Sources */,
+				018484FB23A658B9005CD618 /* RepositoryServiceMocked.swift in Sources */,
 				01B0267E23A6301300D6062E /* StackOverflowUsersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
