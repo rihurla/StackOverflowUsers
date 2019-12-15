@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0126AC5E23A6725600815DAF /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC5D23A6725600815DAF /* UserCell.swift */; };
+		0126AC6023A6725F00815DAF /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC5F23A6725F00815DAF /* UserCellViewModel.swift */; };
+		0126AC6323A67C3500815DAF /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC6223A67C3500815DAF /* Spacing.swift */; };
+		0126AC6523A67D7A00815DAF /* Sizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC6423A67D7A00815DAF /* Sizing.swift */; };
+		0126AC6723A6801000815DAF /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC6623A6801000815DAF /* UINavigationControllerExtension.swift */; };
+		0126AC6923A6860F00815DAF /* StackOverflowUserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC6823A6860F00815DAF /* StackOverflowUserList.swift */; };
+		0126AC6B23A68FFE00815DAF /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC6A23A68FFE00815DAF /* ColorPallete.swift */; };
+		0126AC6D23A6903E00815DAF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC6C23A6903E00815DAF /* UIColorExtension.swift */; };
+		0126AC6F23A6909C00815DAF /* FontPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC6E23A6909C00815DAF /* FontPallete.swift */; };
+		0126AC7123A6943400815DAF /* UserListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC7023A6943400815DAF /* UserListDataProvider.swift */; };
+		0126AC7423A697DB00815DAF /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC7323A697DB00815DAF /* UserListViewModelTests.swift */; };
+		0126AC7623A6984A00815DAF /* UserListDataProviderMocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC7523A6984A00815DAF /* UserListDataProviderMocked.swift */; };
+		0126AC7A23A6A19200815DAF /* UserCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC7923A6A19200815DAF /* UserCellViewModelTests.swift */; };
 		018484E623A635FA005CD618 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484E523A635FA005CD618 /* ViewControllerFactory.swift */; };
 		018484E923A637C1005CD618 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484E823A637C1005CD618 /* UserListViewModel.swift */; };
 		018484EB23A637C9005CD618 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484EA23A637C9005CD618 /* UserListViewController.swift */; };
@@ -21,7 +34,6 @@
 		0184850123A66015005CD618 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0184850023A66015005CD618 /* Localizable.strings */; };
 		01B0266723A6301200D6062E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B0266623A6301200D6062E /* AppDelegate.swift */; };
 		01B0266923A6301200D6062E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B0266823A6301200D6062E /* SceneDelegate.swift */; };
-		01B0266B23A6301200D6062E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B0266A23A6301200D6062E /* ViewController.swift */; };
 		01B0267023A6301300D6062E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01B0266F23A6301300D6062E /* Assets.xcassets */; };
 		01B0267323A6301300D6062E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B0267123A6301300D6062E /* LaunchScreen.storyboard */; };
 		01B0267E23A6301300D6062E /* StackOverflowUsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B0267D23A6301300D6062E /* StackOverflowUsersTests.swift */; };
@@ -38,6 +50,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0126AC5D23A6725600815DAF /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		0126AC5F23A6725F00815DAF /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
+		0126AC6223A67C3500815DAF /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		0126AC6423A67D7A00815DAF /* Sizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizing.swift; sourceTree = "<group>"; };
+		0126AC6623A6801000815DAF /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		0126AC6823A6860F00815DAF /* StackOverflowUserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowUserList.swift; sourceTree = "<group>"; };
+		0126AC6A23A68FFE00815DAF /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
+		0126AC6C23A6903E00815DAF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		0126AC6E23A6909C00815DAF /* FontPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPallete.swift; sourceTree = "<group>"; };
+		0126AC7023A6943400815DAF /* UserListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataProvider.swift; sourceTree = "<group>"; };
+		0126AC7323A697DB00815DAF /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
+		0126AC7523A6984A00815DAF /* UserListDataProviderMocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataProviderMocked.swift; sourceTree = "<group>"; };
+		0126AC7923A6A19200815DAF /* UserCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModelTests.swift; sourceTree = "<group>"; };
 		018484E523A635FA005CD618 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		018484E823A637C1005CD618 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		018484EA23A637C9005CD618 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +78,6 @@
 		01B0266323A6301200D6062E /* StackOverflowUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflowUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01B0266623A6301200D6062E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01B0266823A6301200D6062E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		01B0266A23A6301200D6062E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		01B0266F23A6301300D6062E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01B0267223A6301300D6062E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01B0267423A6301300D6062E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +104,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01221FA323A6696C00D06EED /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				0126AC5C23A6723B00815DAF /* Cell */,
+				0126AC7023A6943400815DAF /* UserListDataProvider.swift */,
+				018484E823A637C1005CD618 /* UserListViewModel.swift */,
+				018484EA23A637C9005CD618 /* UserListViewController.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		0126AC5C23A6723B00815DAF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0126AC5F23A6725F00815DAF /* UserCellViewModel.swift */,
+				0126AC5D23A6725600815DAF /* UserCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0126AC6123A67C1F00815DAF /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				0126AC6223A67C3500815DAF /* Spacing.swift */,
+				0126AC6423A67D7A00815DAF /* Sizing.swift */,
+				0126AC6A23A68FFE00815DAF /* ColorPallete.swift */,
+				0126AC6E23A6909C00815DAF /* FontPallete.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		0126AC7223A697CA00815DAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0126AC7723A6A15D00815DAF /* UserList */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0126AC7723A6A15D00815DAF /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				0126AC7823A6A16800815DAF /* Cell */,
+				0126AC7523A6984A00815DAF /* UserListDataProviderMocked.swift */,
+				0126AC7323A697DB00815DAF /* UserListViewModelTests.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		0126AC7823A6A16800815DAF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0126AC7923A6A19200815DAF /* UserCellViewModelTests.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		018484E423A635A3005CD618 /* Management */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,8 +172,7 @@
 		018484E723A63775005CD618 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				018484E823A637C1005CD618 /* UserListViewModel.swift */,
-				018484EA23A637C9005CD618 /* UserListViewController.swift */,
+				01221FA323A6696C00D06EED /* UserList */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +191,7 @@
 		018484EF23A63ED5005CD618 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0126AC6823A6860F00815DAF /* StackOverflowUserList.swift */,
 				018484F023A63F0A005CD618 /* StackOverflowUser.swift */,
 			);
 			path = Models;
@@ -120,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				018484F523A65261005CD618 /* URLComponentsExtension.swift */,
+				0126AC6623A6801000815DAF /* UINavigationControllerExtension.swift */,
+				0126AC6C23A6903E00815DAF /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -154,6 +237,7 @@
 		01B0266523A6301200D6062E /* StackOverflowUsers */ = {
 			isa = PBXGroup;
 			children = (
+				0126AC6123A67C1F00815DAF /* Design */,
 				018484F423A65247005CD618 /* Extensions */,
 				018484EF23A63ED5005CD618 /* Models */,
 				018484EC23A6394B005CD618 /* Service */,
@@ -161,7 +245,6 @@
 				018484E723A63775005CD618 /* View */,
 				01B0266623A6301200D6062E /* AppDelegate.swift */,
 				01B0266823A6301200D6062E /* SceneDelegate.swift */,
-				01B0266A23A6301200D6062E /* ViewController.swift */,
 				01B0266F23A6301300D6062E /* Assets.xcassets */,
 				01B0267123A6301300D6062E /* LaunchScreen.storyboard */,
 				01B0267423A6301300D6062E /* Info.plist */,
@@ -174,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				018484F723A6540C005CD618 /* Service */,
+				0126AC7223A697CA00815DAF /* View */,
 				01B0267D23A6301300D6062E /* StackOverflowUsersTests.swift */,
 				01B0267F23A6301300D6062E /* Info.plist */,
 			);
@@ -282,16 +366,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				018484F323A647AB005CD618 /* ServiceUrls.swift in Sources */,
+				0126AC5E23A6725600815DAF /* UserCell.swift in Sources */,
+				0126AC7123A6943400815DAF /* UserListDataProvider.swift in Sources */,
+				0126AC6723A6801000815DAF /* UINavigationControllerExtension.swift in Sources */,
+				0126AC6323A67C3500815DAF /* Spacing.swift in Sources */,
+				0126AC6D23A6903E00815DAF /* UIColorExtension.swift in Sources */,
 				018484F923A65836005CD618 /* RepositoryService.swift in Sources */,
 				018484FF23A65FA7005CD618 /* RepositoryError.swift in Sources */,
 				018484F623A65261005CD618 /* URLComponentsExtension.swift in Sources */,
-				01B0266B23A6301200D6062E /* ViewController.swift in Sources */,
 				018484E623A635FA005CD618 /* ViewControllerFactory.swift in Sources */,
 				01B0266723A6301200D6062E /* AppDelegate.swift in Sources */,
+				0126AC6B23A68FFE00815DAF /* ColorPallete.swift in Sources */,
 				018484F123A63F0A005CD618 /* StackOverflowUser.swift in Sources */,
+				0126AC6023A6725F00815DAF /* UserCellViewModel.swift in Sources */,
+				0126AC6523A67D7A00815DAF /* Sizing.swift in Sources */,
 				01B0266923A6301200D6062E /* SceneDelegate.swift in Sources */,
+				0126AC6923A6860F00815DAF /* StackOverflowUserList.swift in Sources */,
 				018484E923A637C1005CD618 /* UserListViewModel.swift in Sources */,
 				018484EE23A63BFD005CD618 /* StackOverflowRepository.swift in Sources */,
+				0126AC6F23A6909C00815DAF /* FontPallete.swift in Sources */,
 				018484EB23A637C9005CD618 /* UserListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,8 +394,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				018484FD23A65B9A005CD618 /* StackOverflowRepositoryTests.swift in Sources */,
+				0126AC7423A697DB00815DAF /* UserListViewModelTests.swift in Sources */,
+				0126AC7623A6984A00815DAF /* UserListDataProviderMocked.swift in Sources */,
 				018484FB23A658B9005CD618 /* RepositoryServiceMocked.swift in Sources */,
 				01B0267E23A6301300D6062E /* StackOverflowUsersTests.swift in Sources */,
+				0126AC7A23A6A19200815DAF /* UserCellViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

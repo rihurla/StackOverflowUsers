@@ -22,6 +22,7 @@ public struct RepositoryService: RepositoryServiceType {
             failure(RepositoryError.urlError)
             return
         }
+
         URLSession.shared.dataTask(with: requestUrl) { (data, response, error) in
             guard let requestData = data, error == nil else {
                 failure(error)

@@ -8,7 +8,14 @@
 
 import Foundation
 
-public struct StackOverflowUser: Decodable, Equatable {
+public struct StackOverflowUser: Codable, Equatable {
     let name: String
-    let reputation: String
+    let profileImage: String?
+    let reputation: Int
+
+    enum CodingKeys: String, CodingKey {
+        case name = "display_name"
+        case profileImage = "profile_image"
+        case reputation
+    }
 }

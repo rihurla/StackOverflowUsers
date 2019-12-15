@@ -8,3 +8,14 @@
 
 // Repository Errors
 "repository_default_generic_error"="Something went wrong! :(";
+
+// UserList Screen
+"refresh_component_title"="Refresh";
+"user_list_title"="Users";
+
+// Error alerts
+"alert_error_title"="Error :(";
+"alert_error_action_ok_title"="Ok, got it";
+
+// User cell
+"reputation_prefix"="Reputation: ";

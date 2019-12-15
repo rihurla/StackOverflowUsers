@@ -10,18 +10,18 @@ import Foundation
 
 public typealias RepositoryParameters = [String: String]
 
-public protocol RepositoryResources {
+public protocol StackOverflowRepositoryType {
     func fetchUserList(parameters: RepositoryParameters?,
-                       success: @escaping ([StackOverflowUser]) -> Void,
+                       success: @escaping (StackOverflowUserList) -> Void,
                        failure: @escaping (Error?) -> Void)
 }
 
-public struct StackOverflowRepository: RepositoryResources {
+public struct StackOverflowRepository: StackOverflowRepositoryType {
     private let service: RepositoryServiceType
     private var urlComponents: URLComponents {
         var urlComponents = URLComponents()
         urlComponents.scheme = ServiceUrls.scheme
-        urlComponents.host = ServiceUrls.baseUrl + ServiceUrls.apiVersion
+        urlComponents.host = ServiceUrls.baseUrl
         return urlComponents
     }
 
@@ -30,12 +30,12 @@ public struct StackOverflowRepository: RepositoryResources {
     }
 
     public func fetchUserList(parameters: RepositoryParameters?,
-                              success: @escaping ([StackOverflowUser]) -> Void,
+                              success: @escaping (StackOverflowUserList) -> Void,
                               failure: @escaping (Error?) -> Void) {
         var components = urlComponents
-        components.path = ServiceUrls.userListPath
+        components.path = ServiceUrls.apiVersion + ServiceUrls.userListPath
         if let queryParameters = parameters { components.setQueryItems(with: queryParameters) }
-        service.makeRequest(url: components.url, success: { (users: [StackOverflowUser]) in
+        service.makeRequest(url: components.url, success: { (users: StackOverflowUserList) in
             success(users)
         }, failure: { (error) in
             failure(error)

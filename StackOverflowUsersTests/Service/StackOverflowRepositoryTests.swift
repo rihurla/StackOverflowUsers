@@ -13,10 +13,6 @@ class StackOverflowRepositoryTests: XCTestCase {
 
     var sut: StackOverflowRepository!
 
-    override func setUp() {
-        super.setUp()
-    }
-
     override func tearDown() {
         sut = nil
         super.tearDown()
@@ -24,12 +20,12 @@ class StackOverflowRepositoryTests: XCTestCase {
 
     func test_fetchUserList_withSuccess() {
         // GIVEN
-        configureSut(mockedObject: [Mocked.user])
+        configureSut(mockedObject: Mocked.userList)
         var testResult: [StackOverflowUser]?
 
         // WHEN
-        sut.fetchUserList(parameters: nil, success: { (users) in
-            testResult = users
+        sut.fetchUserList(parameters: nil, success: { (userList) in
+            testResult = userList.users
         }) { (error) in
             XCTFail("Should not call failure while testing success")
         }
@@ -41,12 +37,12 @@ class StackOverflowRepositoryTests: XCTestCase {
     func test_fetchUserList_responseObject() {
         // GIVEN
         let expectedUser = Mocked.user
-        configureSut(mockedObject: [Mocked.user])
+        configureSut(mockedObject: Mocked.userList)
         var testResult: [StackOverflowUser]?
 
         // WHEN
-        sut.fetchUserList(parameters: nil, success: { (users) in
-            testResult = users
+        sut.fetchUserList(parameters: nil, success: { (userList) in
+            testResult = userList.users
         }) { (error) in
             XCTFail("Should not call failure while testing success")
         }
@@ -57,7 +53,7 @@ class StackOverflowRepositoryTests: XCTestCase {
 
     func test_fetchUserList_withError() {
         // GIVEN
-        configureSut(mockedObject: [Mocked.user], error: Mocked.error)
+        configureSut(mockedObject: Mocked.userList, error: Mocked.error)
         var testResult: Error?
 
         // WHEN
@@ -74,7 +70,7 @@ class StackOverflowRepositoryTests: XCTestCase {
     func test_fetchUserList_errorDescription() {
         // GIVEN
         let expectedErrorDescription = "Something went wrong! :("
-        configureSut(mockedObject: [Mocked.user], error: Mocked.error)
+        configureSut(mockedObject: Mocked.userList, error: Mocked.error)
         var testResult: Error?
 
         // WHEN
@@ -91,7 +87,8 @@ class StackOverflowRepositoryTests: XCTestCase {
     // MARK: Private
 
     private enum Mocked {
-        static let user = StackOverflowUser(name: "Ricardo Hurla", reputation: "100")
+        static let user = StackOverflowUser(name: "Ricardo Hurla", profileImage: nil, reputation: 1000)
+        static let userList = StackOverflowUserList(users: [user], hasMore: false)
         static let error = RepositoryError.requestFailure
     }
 
