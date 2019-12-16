@@ -11,9 +11,11 @@ import UIKit
 public enum FontPallete {
     private enum FontSize {
         static let large: CGFloat = 18
-        static let regular: CGFloat = 14
+        static let regular: CGFloat = 16
+        static let small:  CGFloat = 14
     }
 
     static let title = UIFont.boldSystemFont(ofSize: FontSize.large)
-    static let subtitle = UIFont.systemFont(ofSize: FontSize.regular)
+    static let subtitle = UIFont.systemFont(ofSize: FontSize.small)
+    static let button = UIFont.boldSystemFont(ofSize: FontSize.regular)
 }

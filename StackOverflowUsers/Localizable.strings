@@ -19,3 +19,7 @@
 
 // User cell
 "reputation_prefix"="Reputation: ";
+"follow_button_title"="Follow";
+"following_button_title"="Following";
+"block_button_title"="Block";
+"blocked_button_title"="Blocked";

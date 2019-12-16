@@ -8,8 +8,9 @@
 
 import Foundation
 
-protocol UserListViewModelType {
+protocol UserListViewModelType: UserCellViewModelDelegate {
     var fetchHander: ((_ errorMessage: String?) -> Void)? { get set }
+    var updateHander: ((_ indexPath: IndexPath) -> Void)? { get set }
     func fetchUserList()
     func userCount() -> Int
     func stackOverflowUserFor(_ indexPath: IndexPath) -> StackOverflowUser
@@ -19,9 +20,11 @@ final class UserListViewModel: UserListViewModelType {
 
     // MARK: Public properties
     public var fetchHander: ((_ errorMessage: String?) -> Void)?
+    public var updateHander: ((_ indexPath: IndexPath) -> Void)?
 
     // MARK: Private properties
     private let dataProvider: UserListDataProviderType
+    private let userManager: StackOverflowUserManagerType
     private var userlist: [StackOverflowUser] = [] {
         didSet {
             fetchHander?(nil)
@@ -29,8 +32,10 @@ final class UserListViewModel: UserListViewModelType {
     }
 
     // MARK: Public methods
-    init(dataProvider: UserListDataProviderType = UserListDataProvider()) {
+    init(dataProvider: UserListDataProviderType = UserListDataProvider(),
+         userManager: StackOverflowUserManagerType = StackOverflowUserManager()) {
         self.dataProvider = dataProvider
+        self.userManager = userManager
     }
 
     // MARK: Private methods
@@ -66,5 +71,20 @@ extension UserListViewModel {
 
     public func stackOverflowUserFor(_ indexPath: IndexPath) -> StackOverflowUser {
         return userlist[indexPath.item]
+    }
+}
+
+// MARK: - Cell delegate
+extension UserListViewModel: UserCellViewModelDelegate {
+    func followUnfollowUser(_ user: StackOverflowUser) {
+        guard let index = userlist.firstIndex(where: {$0 == user}) else { return }
+        userManager.followUnfollowUser(user)
+        updateHander?(IndexPath(row: index, section: 0))
+    }
+
+    func blockUnblockUser(_ user: StackOverflowUser) {
+        guard let index = userlist.firstIndex(where: {$0 == user}) else { return }
+        userManager.blockUnblockUser(user)
+        updateHander?(IndexPath(row: index, section: 0))
     }
 }

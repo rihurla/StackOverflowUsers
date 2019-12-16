@@ -87,7 +87,7 @@ class StackOverflowRepositoryTests: XCTestCase {
     // MARK: Private
 
     private enum Mocked {
-        static let user = StackOverflowUser(name: "Ricardo Hurla", profileImage: nil, reputation: 1000)
+        static let user = StackOverflowUser(accountId: 123, name: "Ricardo Hurla", profileImage: nil, reputation: 1000)
         static let userList = StackOverflowUserList(users: [user], hasMore: false)
         static let error = RepositoryError.requestFailure
     }

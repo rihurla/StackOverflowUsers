@@ -44,7 +44,7 @@ final class UserListViewController: UIViewController {
     }
 
     private func configureTableView() {
-        tableView.allowsSelection = false
+        tableView.allowsSelection = true
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UserCell.self, forCellReuseIdentifier: UserCell.identifier)
@@ -75,6 +75,9 @@ final class UserListViewController: UIViewController {
                 self?.refreshControl.endRefreshing()
             }
         }
+        viewModel.updateHander = { [weak self] indexPath in
+            self?.tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
     }
 
     @objc private func fetchUsers() {
@@ -104,6 +107,7 @@ extension UserListViewController: UITableViewDataSource {
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath) as! UserCell
         let cellViewModel = UserCellViewModel(user: viewModel.stackOverflowUserFor(indexPath))
+        cellViewModel.delegate = viewModel
         cell.configure(viewModel: cellViewModel)
         return cell
     }
@@ -112,5 +116,17 @@ extension UserListViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension UserListViewController: UITableViewDelegate {
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else { return }
+//        tableView.performBatchUpdates({
+//            cell.setCellExpanded(true)
+//        }, completion: nil)
+    }
+
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else { return }
+//        tableView.performBatchUpdates({
+//            cell.setCellExpanded(false)
+//        }, completion: nil)
+    }
 }

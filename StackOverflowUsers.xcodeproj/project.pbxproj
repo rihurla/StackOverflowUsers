@@ -20,6 +20,11 @@
 		0126AC7423A697DB00815DAF /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC7323A697DB00815DAF /* UserListViewModelTests.swift */; };
 		0126AC7623A6984A00815DAF /* UserListDataProviderMocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC7523A6984A00815DAF /* UserListDataProviderMocked.swift */; };
 		0126AC7A23A6A19200815DAF /* UserCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC7923A6A19200815DAF /* UserCellViewModelTests.swift */; };
+		0126ACAA23A78C1A00815DAF /* StackOverflowUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126ACA923A78C1A00815DAF /* StackOverflowUserManager.swift */; };
+		0126ACAD23A7A64900815DAF /* StackOverflowUserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126ACAC23A7A64900815DAF /* StackOverflowUserStorage.swift */; };
+		0126ACAF23A7B51000815DAF /* StackOverflowStorableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126ACAE23A7B51000815DAF /* StackOverflowStorableUser.swift */; };
+		0126ACB923A7C85300815DAF /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126ACB823A7C85300815DAF /* ButtonFactory.swift */; };
+		0126ACBB23A7C85B00815DAF /* StackViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126ACBA23A7C85B00815DAF /* StackViewFactory.swift */; };
 		018484E623A635FA005CD618 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484E523A635FA005CD618 /* ViewControllerFactory.swift */; };
 		018484E923A637C1005CD618 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484E823A637C1005CD618 /* UserListViewModel.swift */; };
 		018484EB23A637C9005CD618 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484EA23A637C9005CD618 /* UserListViewController.swift */; };
@@ -63,6 +68,11 @@
 		0126AC7323A697DB00815DAF /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
 		0126AC7523A6984A00815DAF /* UserListDataProviderMocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataProviderMocked.swift; sourceTree = "<group>"; };
 		0126AC7923A6A19200815DAF /* UserCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModelTests.swift; sourceTree = "<group>"; };
+		0126ACA923A78C1A00815DAF /* StackOverflowUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowUserManager.swift; sourceTree = "<group>"; };
+		0126ACAC23A7A64900815DAF /* StackOverflowUserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowUserStorage.swift; sourceTree = "<group>"; };
+		0126ACAE23A7B51000815DAF /* StackOverflowStorableUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowStorableUser.swift; sourceTree = "<group>"; };
+		0126ACB823A7C85300815DAF /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
+		0126ACBA23A7C85B00815DAF /* StackViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewFactory.swift; sourceTree = "<group>"; };
 		018484E523A635FA005CD618 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		018484E823A637C1005CD618 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		018484EA23A637C9005CD618 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +141,8 @@
 				0126AC6423A67D7A00815DAF /* Sizing.swift */,
 				0126AC6A23A68FFE00815DAF /* ColorPallete.swift */,
 				0126AC6E23A6909C00815DAF /* FontPallete.swift */,
+				0126ACB823A7C85300815DAF /* ButtonFactory.swift */,
+				0126ACBA23A7C85B00815DAF /* StackViewFactory.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -161,10 +173,19 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		0126ACAB23A7A63C00815DAF /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				0126ACAC23A7A64900815DAF /* StackOverflowUserStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		018484E423A635A3005CD618 /* Management */ = {
 			isa = PBXGroup;
 			children = (
 				018484E523A635FA005CD618 /* ViewControllerFactory.swift */,
+				0126ACA923A78C1A00815DAF /* StackOverflowUserManager.swift */,
 			);
 			path = Management;
 			sourceTree = "<group>";
@@ -193,6 +214,7 @@
 			children = (
 				0126AC6823A6860F00815DAF /* StackOverflowUserList.swift */,
 				018484F023A63F0A005CD618 /* StackOverflowUser.swift */,
+				0126ACAE23A7B51000815DAF /* StackOverflowStorableUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -237,6 +259,7 @@
 		01B0266523A6301200D6062E /* StackOverflowUsers */ = {
 			isa = PBXGroup;
 			children = (
+				0126ACAB23A7A63C00815DAF /* Storage */,
 				0126AC6123A67C1F00815DAF /* Design */,
 				018484F423A65247005CD618 /* Extensions */,
 				018484EF23A63ED5005CD618 /* Models */,
@@ -378,14 +401,19 @@
 				01B0266723A6301200D6062E /* AppDelegate.swift in Sources */,
 				0126AC6B23A68FFE00815DAF /* ColorPallete.swift in Sources */,
 				018484F123A63F0A005CD618 /* StackOverflowUser.swift in Sources */,
+				0126ACB923A7C85300815DAF /* ButtonFactory.swift in Sources */,
 				0126AC6023A6725F00815DAF /* UserCellViewModel.swift in Sources */,
 				0126AC6523A67D7A00815DAF /* Sizing.swift in Sources */,
 				01B0266923A6301200D6062E /* SceneDelegate.swift in Sources */,
 				0126AC6923A6860F00815DAF /* StackOverflowUserList.swift in Sources */,
+				0126ACAA23A78C1A00815DAF /* StackOverflowUserManager.swift in Sources */,
 				018484E923A637C1005CD618 /* UserListViewModel.swift in Sources */,
 				018484EE23A63BFD005CD618 /* StackOverflowRepository.swift in Sources */,
 				0126AC6F23A6909C00815DAF /* FontPallete.swift in Sources */,
+				0126ACAD23A7A64900815DAF /* StackOverflowUserStorage.swift in Sources */,
 				018484EB23A637C9005CD618 /* UserListViewController.swift in Sources */,
+				0126ACBB23A7C85B00815DAF /* StackViewFactory.swift in Sources */,
+				0126ACAF23A7B51000815DAF /* StackOverflowStorableUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
