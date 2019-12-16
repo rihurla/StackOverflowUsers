@@ -10,8 +10,8 @@ import UIKit
 
 extension UINavigationController {
     func configureAppearance() {
-        self.navigationBar.isTranslucent = true
-        self.navigationItem.largeTitleDisplayMode = .automatic
-        self.navigationBar.prefersLargeTitles = true
+        navigationBar.isTranslucent = true
+        navigationItem.largeTitleDisplayMode = .automatic
+        navigationBar.prefersLargeTitles = true
     }
 }

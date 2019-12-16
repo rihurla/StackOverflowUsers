@@ -14,7 +14,6 @@
 		0126AC6723A6801000815DAF /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC6623A6801000815DAF /* UINavigationControllerExtension.swift */; };
 		0126AC6923A6860F00815DAF /* StackOverflowUserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC6823A6860F00815DAF /* StackOverflowUserList.swift */; };
 		0126AC6B23A68FFE00815DAF /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC6A23A68FFE00815DAF /* ColorPallete.swift */; };
-		0126AC6D23A6903E00815DAF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC6C23A6903E00815DAF /* UIColorExtension.swift */; };
 		0126AC6F23A6909C00815DAF /* FontPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC6E23A6909C00815DAF /* FontPallete.swift */; };
 		0126AC7123A6943400815DAF /* UserListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC7023A6943400815DAF /* UserListDataProvider.swift */; };
 		0126AC7423A697DB00815DAF /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC7323A697DB00815DAF /* UserListViewModelTests.swift */; };
@@ -25,6 +24,11 @@
 		0126ACAF23A7B51000815DAF /* StackOverflowStorableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126ACAE23A7B51000815DAF /* StackOverflowStorableUser.swift */; };
 		0126ACB923A7C85300815DAF /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126ACB823A7C85300815DAF /* ButtonFactory.swift */; };
 		0126ACBB23A7C85B00815DAF /* StackViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126ACBA23A7C85B00815DAF /* StackViewFactory.swift */; };
+		0126ACC423A7D7EF00815DAF /* StackOverflowUserStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126ACC323A7D7EF00815DAF /* StackOverflowUserStorageTests.swift */; };
+		0126ACC623A7D82F00815DAF /* UserDefaultsMocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126ACC523A7D82F00815DAF /* UserDefaultsMocked.swift */; };
+		0126ACC823A7DC4E00815DAF /* StackOverflowUserManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126ACC723A7DC4E00815DAF /* StackOverflowUserManagerTests.swift */; };
+		0126ACCA23A7DCD300815DAF /* StackOverflowUserStorageMocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126ACC923A7DCD300815DAF /* StackOverflowUserStorageMocked.swift */; };
+		0126ACCC23A7EB6200815DAF /* StackOverflowUserManagerMocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126ACCB23A7EB6200815DAF /* StackOverflowUserManagerMocked.swift */; };
 		018484E623A635FA005CD618 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484E523A635FA005CD618 /* ViewControllerFactory.swift */; };
 		018484E923A637C1005CD618 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484E823A637C1005CD618 /* UserListViewModel.swift */; };
 		018484EB23A637C9005CD618 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018484EA23A637C9005CD618 /* UserListViewController.swift */; };
@@ -62,7 +66,6 @@
 		0126AC6623A6801000815DAF /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		0126AC6823A6860F00815DAF /* StackOverflowUserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowUserList.swift; sourceTree = "<group>"; };
 		0126AC6A23A68FFE00815DAF /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
-		0126AC6C23A6903E00815DAF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		0126AC6E23A6909C00815DAF /* FontPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPallete.swift; sourceTree = "<group>"; };
 		0126AC7023A6943400815DAF /* UserListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDataProvider.swift; sourceTree = "<group>"; };
 		0126AC7323A697DB00815DAF /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
@@ -73,6 +76,11 @@
 		0126ACAE23A7B51000815DAF /* StackOverflowStorableUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowStorableUser.swift; sourceTree = "<group>"; };
 		0126ACB823A7C85300815DAF /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		0126ACBA23A7C85B00815DAF /* StackViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewFactory.swift; sourceTree = "<group>"; };
+		0126ACC323A7D7EF00815DAF /* StackOverflowUserStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowUserStorageTests.swift; sourceTree = "<group>"; };
+		0126ACC523A7D82F00815DAF /* UserDefaultsMocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMocked.swift; sourceTree = "<group>"; };
+		0126ACC723A7DC4E00815DAF /* StackOverflowUserManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowUserManagerTests.swift; sourceTree = "<group>"; };
+		0126ACC923A7DCD300815DAF /* StackOverflowUserStorageMocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowUserStorageMocked.swift; sourceTree = "<group>"; };
+		0126ACCB23A7EB6200815DAF /* StackOverflowUserManagerMocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowUserManagerMocked.swift; sourceTree = "<group>"; };
 		018484E523A635FA005CD618 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		018484E823A637C1005CD618 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		018484EA23A637C9005CD618 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
@@ -159,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				0126AC7823A6A16800815DAF /* Cell */,
-				0126AC7523A6984A00815DAF /* UserListDataProviderMocked.swift */,
 				0126AC7323A697DB00815DAF /* UserListViewModelTests.swift */,
 			);
 			path = UserList;
@@ -179,6 +186,34 @@
 				0126ACAC23A7A64900815DAF /* StackOverflowUserStorage.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		0126ACBC23A7D63B00815DAF /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				0126ACC323A7D7EF00815DAF /* StackOverflowUserStorageTests.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		0126ACBF23A7D67D00815DAF /* Management */ = {
+			isa = PBXGroup;
+			children = (
+				0126ACC723A7DC4E00815DAF /* StackOverflowUserManagerTests.swift */,
+			);
+			path = Management;
+			sourceTree = "<group>";
+		};
+		0126ACC223A7D69E00815DAF /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				018484FA23A658B9005CD618 /* RepositoryServiceMocked.swift */,
+				0126AC7523A6984A00815DAF /* UserListDataProviderMocked.swift */,
+				0126ACC523A7D82F00815DAF /* UserDefaultsMocked.swift */,
+				0126ACC923A7DCD300815DAF /* StackOverflowUserStorageMocked.swift */,
+				0126ACCB23A7EB6200815DAF /* StackOverflowUserManagerMocked.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		018484E423A635A3005CD618 /* Management */ = {
@@ -224,7 +259,6 @@
 			children = (
 				018484F523A65261005CD618 /* URLComponentsExtension.swift */,
 				0126AC6623A6801000815DAF /* UINavigationControllerExtension.swift */,
-				0126AC6C23A6903E00815DAF /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,7 +266,6 @@
 		018484F723A6540C005CD618 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				018484FA23A658B9005CD618 /* RepositoryServiceMocked.swift */,
 				018484FC23A65B9A005CD618 /* StackOverflowRepositoryTests.swift */,
 			);
 			path = Service;
@@ -279,6 +312,9 @@
 		01B0267C23A6301300D6062E /* StackOverflowUsersTests */ = {
 			isa = PBXGroup;
 			children = (
+				0126ACC223A7D69E00815DAF /* Mocks */,
+				0126ACBF23A7D67D00815DAF /* Management */,
+				0126ACBC23A7D63B00815DAF /* Storage */,
 				018484F723A6540C005CD618 /* Service */,
 				0126AC7223A697CA00815DAF /* View */,
 				01B0267D23A6301300D6062E /* StackOverflowUsersTests.swift */,
@@ -393,7 +429,6 @@
 				0126AC7123A6943400815DAF /* UserListDataProvider.swift in Sources */,
 				0126AC6723A6801000815DAF /* UINavigationControllerExtension.swift in Sources */,
 				0126AC6323A67C3500815DAF /* Spacing.swift in Sources */,
-				0126AC6D23A6903E00815DAF /* UIColorExtension.swift in Sources */,
 				018484F923A65836005CD618 /* RepositoryService.swift in Sources */,
 				018484FF23A65FA7005CD618 /* RepositoryError.swift in Sources */,
 				018484F623A65261005CD618 /* URLComponentsExtension.swift in Sources */,
@@ -421,12 +456,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0126ACCC23A7EB6200815DAF /* StackOverflowUserManagerMocked.swift in Sources */,
 				018484FD23A65B9A005CD618 /* StackOverflowRepositoryTests.swift in Sources */,
 				0126AC7423A697DB00815DAF /* UserListViewModelTests.swift in Sources */,
 				0126AC7623A6984A00815DAF /* UserListDataProviderMocked.swift in Sources */,
+				0126ACC823A7DC4E00815DAF /* StackOverflowUserManagerTests.swift in Sources */,
 				018484FB23A658B9005CD618 /* RepositoryServiceMocked.swift in Sources */,
 				01B0267E23A6301300D6062E /* StackOverflowUsersTests.swift in Sources */,
+				0126ACCA23A7DCD300815DAF /* StackOverflowUserStorageMocked.swift in Sources */,
 				0126AC7A23A6A19200815DAF /* UserCellViewModelTests.swift in Sources */,
+				0126ACC623A7D82F00815DAF /* UserDefaultsMocked.swift in Sources */,
+				0126ACC423A7D7EF00815DAF /* StackOverflowUserStorageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

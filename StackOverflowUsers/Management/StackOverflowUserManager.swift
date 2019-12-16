@@ -14,7 +14,7 @@ protocol StackOverflowUserManagerType {
 }
 
 final class StackOverflowUserManager: StackOverflowUserManagerType {
-    let storage: StackOverflowUserStorageType
+    private let storage: StackOverflowUserStorageType
 
     init(storage: StackOverflowUserStorageType = StackOverflowUserStorage()) {
         self.storage = storage

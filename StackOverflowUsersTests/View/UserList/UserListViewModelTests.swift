@@ -24,8 +24,9 @@ class UserListViewModelTests: XCTestCase {
         let handler: (_ errorMessage: String?) -> Void = { errorMessage in
             testResult = errorMessage
         }
-        // WHEN
         configureSut(fetchHandler: handler, userList: Mocked.userList, error: Mocked.error)
+
+        // WHEN
         sut.fetchUserList()
 
         // THEN
@@ -38,9 +39,9 @@ class UserListViewModelTests: XCTestCase {
         let handler: (_ errorMessage: String?) -> Void = { errorMessage in
             testResult = errorMessage
         }
+        configureSut(fetchHandler: handler, userList: Mocked.userList, error: Mocked.error)
 
         // WHEN
-        configureSut(fetchHandler: handler, userList: Mocked.userList, error: Mocked.error)
         sut.fetchUserList()
 
         // THEN
@@ -53,9 +54,9 @@ class UserListViewModelTests: XCTestCase {
         let handler: (_ errorMessage: String?) -> Void = { errorMessage in
             testResult = self.sut.userCount()
         }
+        configureSut(fetchHandler: handler, userList: Mocked.userList)
 
         // WHEN
-        configureSut(fetchHandler: handler, userList: Mocked.userList)
         sut.fetchUserList()
 
         // THEN
@@ -70,9 +71,9 @@ class UserListViewModelTests: XCTestCase {
         let handler: (_ errorMessage: String?) -> Void = { errorMessage in
             testResult = self.sut.stackOverflowUserFor(indexPath)
         }
+        configureSut(fetchHandler: handler, userList: Mocked.userList)
 
         // WHEN
-        configureSut(fetchHandler: handler, userList: Mocked.userList)
         sut.fetchUserList()
 
         // THEN
@@ -87,15 +88,45 @@ class UserListViewModelTests: XCTestCase {
         let handler: (_ errorMessage: String?) -> Void = { errorMessage in
             testResult = self.sut.stackOverflowUserFor(indexPath)
         }
+        configureSut(fetchHandler: handler, userList: Mocked.userList)
 
         // WHEN
-        configureSut(fetchHandler: handler, userList: Mocked.userList)
         sut.fetchUserList()
 
         // THEN
         XCTAssertEqual(testResult?.name, expectedUser.name)
         XCTAssertEqual(testResult?.profileImage, expectedUser.profileImage)
         XCTAssertEqual(testResult?.reputation, expectedUser.reputation)
+    }
+
+    func test_followUser_updateHandler() {
+        // GIVEN
+        var testResult: IndexPath?
+        let handler: (_ indexPath: IndexPath) -> Void = { indexPath in
+            testResult = indexPath
+        }
+        configureSut(updateHandler: handler, userList: Mocked.userList)
+        sut.fetchUserList()
+
+        // WHEN
+        sut.followUnfollowUser(Mocked.userList.users[0])
+
+        XCTAssertEqual(testResult, IndexPath(item: 0, section: 0))
+    }
+
+    func test_block_updateHandler() {
+        // GIVEN
+        var testResult: IndexPath?
+        let handler: (_ indexPath: IndexPath) -> Void = { indexPath in
+            testResult = indexPath
+        }
+        configureSut(updateHandler: handler, userList: Mocked.userList)
+        sut.fetchUserList()
+
+        // WHEN
+        sut.blockUnblockUser(Mocked.userList.users[0])
+
+        XCTAssertEqual(testResult, IndexPath(item: 0, section: 0))
     }
 
     // MARK: Private
@@ -105,11 +136,13 @@ class UserListViewModelTests: XCTestCase {
         static let error = RepositoryError.requestFailure
     }
 
-    func configureSut(fetchHandler: @escaping (_ errorMessage: String?) -> Void,
+    func configureSut(fetchHandler: @escaping (_ errorMessage: String?) -> Void = {_ in },
+                      updateHandler: @escaping (_ indexPath: IndexPath) -> Void = {_ in },
                       userList: StackOverflowUserList,
                       error: Error? = nil) {
         let dataProvider = UserListDataProviderMocked(userList: userList, error: error)
-        sut = UserListViewModel(dataProvider: dataProvider)
+        sut = UserListViewModel(dataProvider: dataProvider, userManager: StackOverflowUserManagerMocked())
         sut.fetchHander = fetchHandler
+        sut.updateHander = updateHandler
     }
 }

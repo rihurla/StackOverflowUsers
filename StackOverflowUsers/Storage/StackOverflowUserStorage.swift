@@ -60,8 +60,7 @@ public final class StackOverflowUserStorage: StackOverflowUserStorageType {
         if let data = storage.value(forKey: storedUserListKey) as? Data,
             let storedUsers = try? decoder.decode(Array<StackOverflowStorableUser>.self, from: data) {
             return storedUsers
-        } else {
-            return []
         }
+        return []
     }
 }
