@@ -69,7 +69,7 @@ class StackOverflowRepositoryTests: XCTestCase {
 
     func test_fetchUserList_errorDescription() {
         // GIVEN
-        let expectedErrorDescription = "Something went wrong! :("
+        let expectedErrorDescription = "Check your internet connection and try again."
         configureSut(mockedObject: Mocked.userList, error: Mocked.error)
         var testResult: Error?
 

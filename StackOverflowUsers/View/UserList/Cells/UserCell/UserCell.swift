@@ -41,6 +41,12 @@ public final class UserCell: UITableViewCell {
         toggleExpanded()
     }
 
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        followButton.layer.cornerRadius = followButton.frame.height / 2
+        blockButton.layer.cornerRadius = blockButton.frame.height / 2
+    }
+
     // MARK: Private methods
     private func configureAvatarImage(urlString: String?) {
         guard let imageUrlString = urlString, let url = URL(string: imageUrlString) else { return }
@@ -136,9 +142,6 @@ public final class UserCell: UITableViewCell {
             labelsStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Spacing.large),
             labelsStackView.leftAnchor.constraint(equalTo: userAvatar.rightAnchor, constant: Spacing.large),
             labelsStackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: Spacing.large * -1),
-
-            blockButton.heightAnchor.constraint(equalToConstant: Sizing.button.height),
-            followButton.heightAnchor.constraint(equalToConstant: Sizing.button.height),
 
             buttonsStackView.topAnchor.constraint(equalTo: labelsStackView.bottomAnchor, constant: Spacing.large),
             buttonsStackView.leftAnchor.constraint(equalTo: labelsStackView.leftAnchor),

@@ -8,8 +8,10 @@
 
 import Foundation
 
-protocol UserListViewModelType: UserCellViewModelDelegate {
-    var fetchHander: ((_ errorMessage: String?) -> Void)? { get set }
+protocol UserListViewModelType: UserCellViewModelDelegate, ErrorCellViewModelDelegate {
+    var shouldDisplayError: Bool { get }
+    var errorMessage: String? { get }
+    var fetchHander: ((_ success: Bool) -> Void)? { get set }
     var updateHander: ((_ indexPath: IndexPath) -> Void)? { get set }
     func fetchUserList()
     func userCount() -> Int
@@ -19,7 +21,9 @@ protocol UserListViewModelType: UserCellViewModelDelegate {
 final class UserListViewModel: UserListViewModelType {
 
     // MARK: Public properties
-    public var fetchHander: ((_ errorMessage: String?) -> Void)?
+    public var shouldDisplayError: Bool = false
+    public var errorMessage: String?
+    public var fetchHander: ((_ success: Bool) -> Void)?
     public var updateHander: ((_ indexPath: IndexPath) -> Void)?
 
     // MARK: Private properties
@@ -27,7 +31,7 @@ final class UserListViewModel: UserListViewModelType {
     private let userManager: StackOverflowUserManagerType
     private var userlist: [StackOverflowUser] = [] {
         didSet {
-            fetchHander?(nil)
+            fetchHander?(true)
         }
     }
 
@@ -40,15 +44,18 @@ final class UserListViewModel: UserListViewModelType {
 
     // MARK: Private methods
     private func onSuccess(userList: StackOverflowUserList) {
+        shouldDisplayError = false
+        errorMessage = nil
         self.userlist = userList.users
     }
 
     private func onFailure(error: Error?) {
-        var errorMessage: String = RepositoryError.requestFailure.localizedDescription
+        shouldDisplayError = true
+        errorMessage = RepositoryError.requestFailure.localizedDescription
         if let providedError = error {
             errorMessage = providedError.localizedDescription
         }
-        fetchHander?(errorMessage)
+        fetchHander?(false)
     }
 }
 
@@ -86,5 +93,11 @@ extension UserListViewModel: UserCellViewModelDelegate {
         guard let index = userlist.firstIndex(where: {$0 == user}) else { return }
         userManager.blockUnblockUser(user)
         updateHander?(IndexPath(row: index, section: 0))
+    }
+}
+
+extension UserListViewModel: ErrorCellViewModelDelegate {
+    func didTapRetry() {
+        fetchUserList()
     }
 }

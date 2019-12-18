@@ -20,9 +20,9 @@ class UserListViewModelTests: XCTestCase {
 
     func test_fetchUserList_errorHandler() {
         // GIVEN
-        var testResult: String?
-        let handler: (_ errorMessage: String?) -> Void = { errorMessage in
-            testResult = errorMessage
+        var testResult: Bool = true
+        let handler: (_ success: Bool) -> Void = { success in
+            testResult = success
         }
         configureSut(fetchHandler: handler, userList: Mocked.userList, error: Mocked.error)
 
@@ -30,28 +30,25 @@ class UserListViewModelTests: XCTestCase {
         sut.fetchUserList()
 
         // THEN
-        XCTAssertNotNil(testResult)
+        XCTAssertFalse(testResult)
     }
 
     func test_fetchUserList_errorHandler_message() {
         // GIVEN
-        var testResult: String?
-        let handler: (_ errorMessage: String?) -> Void = { errorMessage in
-            testResult = errorMessage
-        }
+        let handler: (_ success: Bool) -> Void = { success in }
         configureSut(fetchHandler: handler, userList: Mocked.userList, error: Mocked.error)
 
         // WHEN
         sut.fetchUserList()
 
         // THEN
-        XCTAssertEqual(testResult, Mocked.error.localizedDescription)
+        XCTAssertEqual(sut.errorMessage, Mocked.error.localizedDescription)
     }
 
     func test_fetchUserList_count() {
         // GIVEN
         var testResult: Int?
-        let handler: (_ errorMessage: String?) -> Void = { errorMessage in
+        let handler: (_ success: Bool) -> Void = { success in
             testResult = self.sut.userCount()
         }
         configureSut(fetchHandler: handler, userList: Mocked.userList)
@@ -68,7 +65,7 @@ class UserListViewModelTests: XCTestCase {
         let expectedUser = Mocked.user
         let indexPath = IndexPath(row: 0, section: 0)
         var testResult: StackOverflowUser?
-        let handler: (_ errorMessage: String?) -> Void = { errorMessage in
+        let handler: (_ success: Bool) -> Void = { success in
             testResult = self.sut.stackOverflowUserFor(indexPath)
         }
         configureSut(fetchHandler: handler, userList: Mocked.userList)
@@ -85,7 +82,7 @@ class UserListViewModelTests: XCTestCase {
         let expectedUser = Mocked.user
         let indexPath = IndexPath(row: 0, section: 0)
         var testResult: StackOverflowUser?
-        let handler: (_ errorMessage: String?) -> Void = { errorMessage in
+        let handler: (_ success: Bool) -> Void = { success in
             testResult = self.sut.stackOverflowUserFor(indexPath)
         }
         configureSut(fetchHandler: handler, userList: Mocked.userList)
@@ -136,7 +133,7 @@ class UserListViewModelTests: XCTestCase {
         static let error = RepositoryError.requestFailure
     }
 
-    func configureSut(fetchHandler: @escaping (_ errorMessage: String?) -> Void = {_ in },
+    func configureSut(fetchHandler: @escaping (_ success: Bool) -> Void = {_ in },
                       updateHandler: @escaping (_ indexPath: IndexPath) -> Void = {_ in },
                       userList: StackOverflowUserList,
                       error: Error? = nil) {

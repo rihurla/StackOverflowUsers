@@ -7,15 +7,16 @@
 */
 
 // Repository Errors
-"repository_default_generic_error"="Something went wrong! :(";
+"repository_default_generic_error"="Check your internet connection and try again.";
 
 // UserList Screen
 "refresh_component_title"="Refresh";
 "user_list_title"="Users";
 
-// Error alerts
-"alert_error_title"="Error :(";
-"alert_error_action_ok_title"="Ok, got it";
+// Error cell
+"error_cell_title"="Something went wrong :(";
+"error_cell_default_message"="Check your internet connection and try again.";
+"error_cell_action_button_title"="Retry";
 
 // User cell
 "reputation_prefix"="Reputation: ";

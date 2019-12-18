@@ -12,14 +12,12 @@ final class UserListViewController: UIViewController {
 
     // MARK: Private properties
     private var viewModel: UserListViewModelType
-    private var refreshControl: UIRefreshControl
     private let tableView: UITableView
 
     // MARK: Lifecyle
     public init(viewModel: UserListViewModelType) {
         self.viewModel = viewModel
         tableView = UITableView()
-        refreshControl = UIRefreshControl()
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -44,18 +42,15 @@ final class UserListViewController: UIViewController {
     }
 
     private func configureTableView() {
-        tableView.allowsMultipleSelection = true
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UserCell.self, forCellReuseIdentifier: UserCell.identifier)
+        tableView.register(ErrorCell.self, forCellReuseIdentifier: ErrorCell.identifier)
         tableView.tableFooterView = UIView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
-        refreshControl.addTarget(self, action: #selector(fetchUsers), for: .valueChanged)
-        refreshControl.attributedTitle = NSAttributedString(string: NSLocalizedString("refresh_component_title",
-                                                                                      comment: ""))
-        tableView.refreshControl = refreshControl
+
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
@@ -65,14 +60,9 @@ final class UserListViewController: UIViewController {
     }
 
     private func configureFetchHandler() {
-        viewModel.fetchHander = { [weak self] error in
+        viewModel.fetchHander = { [weak self] success in
             DispatchQueue.main.async {
-                if let errorMsg = error {
-                    self?.handleErrorWithMessage(errorMsg)
-                } else {
-                    self?.tableView.reloadData()
-                }
-                self?.refreshControl.endRefreshing()
+                success ? self?.handleSuccess() : self?.handleError()
             }
         }
         viewModel.updateHander = { [weak self] indexPath in
@@ -80,19 +70,22 @@ final class UserListViewController: UIViewController {
         }
     }
 
-    @objc private func fetchUsers() {
+    private func fetchUsers() {
         viewModel.fetchUserList()
     }
 
-    private func handleErrorWithMessage(_ message: String) {
-        let alert = UIAlertController(title: NSLocalizedString("alert_error_title", comment: ""),
-                                      message: message,
-                                      preferredStyle: .alert)
-        let action = UIAlertAction(title: NSLocalizedString("alert_error_action_ok_title", comment: ""),
-                                   style: .default,
-                                   handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+    private func handleSuccess() {
+        tableView.separatorStyle = .singleLine
+        tableView.allowsSelection = false
+        tableView.allowsMultipleSelection = true
+        tableView.reloadData()
+    }
+
+    private func handleError() {
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
+        tableView.allowsMultipleSelection = false
+        tableView.reloadData()
     }
 }
 
@@ -100,14 +93,22 @@ final class UserListViewController: UIViewController {
 
 extension UserListViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.userCount()
+        return viewModel.shouldDisplayError ? 1 : viewModel.userCount()
     }
 
     public func tableView(_ tableView: UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath) as! UserCell
+        if viewModel.shouldDisplayError {
+            let cellViewModel = ErrorCellViewModel(errorMessage: viewModel.errorMessage)
+            cellViewModel.delegate = viewModel
+            let cell = tableView.dequeueReusableCell(withIdentifier: ErrorCell.identifier, for: indexPath) as! ErrorCell
+            cell.configure(viewModel: cellViewModel)
+            return cell
+        }
+
         let cellViewModel = UserCellViewModel(user: viewModel.stackOverflowUserFor(indexPath))
         cellViewModel.delegate = viewModel
+        let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath) as! UserCell
         cell.configure(viewModel: cellViewModel)
         return cell
     }
@@ -117,11 +118,13 @@ extension UserListViewController: UITableViewDataSource {
 
 extension UserListViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let _ = tableView.cellForRow(at: indexPath) as? UserCell else { return }
         refreshCell()
         guard viewModel.stackOverflowUserFor(indexPath).status == .blocked else { return }
     }
 
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let _ = tableView.cellForRow(at: indexPath) as? UserCell else { return }
         refreshCell()
     }
 
