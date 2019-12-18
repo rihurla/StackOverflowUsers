@@ -10,6 +10,7 @@ import CoreGraphics
 
 public enum Sizing {
     static let avatar: CGSize = CGSize(width: 50, height: 50)
+    static let badge: CGSize = CGSize(width: 20, height: 20)
     static let button: CGSize = CGSize(width: 100, height: 40)
 }
 

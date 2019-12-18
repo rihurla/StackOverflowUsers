@@ -44,7 +44,7 @@ final class UserListViewController: UIViewController {
     }
 
     private func configureTableView() {
-        tableView.allowsSelection = true
+        tableView.allowsMultipleSelection = true
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UserCell.self, forCellReuseIdentifier: UserCell.identifier)
@@ -117,16 +117,18 @@ extension UserListViewController: UITableViewDataSource {
 
 extension UserListViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else { return }
-//        tableView.performBatchUpdates({
-//            cell.setCellExpanded(true)
-//        }, completion: nil)
+        refreshCell()
+        guard viewModel.stackOverflowUserFor(indexPath).status == .blocked else { return }
     }
 
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else { return }
-//        tableView.performBatchUpdates({
-//            cell.setCellExpanded(false)
-//        }, completion: nil)
+        refreshCell()
+    }
+
+    private func refreshCell() {
+        UIView.setAnimationsEnabled(false)
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        UIView.setAnimationsEnabled(true)
     }
 }

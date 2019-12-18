@@ -15,9 +15,12 @@ public final class UserCell: UITableViewCell {
 
     // MARK: Private properties
     private var viewModel: UserCellViewModelType?
+    private var collapsedConstraint: NSLayoutConstraint?
+    private var expandedConstraint: NSLayoutConstraint?
     private var userNameLabel = UILabel()
     private var userReputationLabel = UILabel()
     private var userAvatar = UIImageView()
+    private var badge = UIImageView()
     private var labelsStackView: UIStackView = UIStackView(frame: .zero)
     private var buttonsStackView: UIStackView = UIStackView(frame: .zero)
     private let followButton: UIButton = ButtonFactory.makeRoundedButton()
@@ -28,18 +31,14 @@ public final class UserCell: UITableViewCell {
         self.viewModel = viewModel
         clipsToBounds = true
         selectionStyle = .none
-        userNameLabel.text = viewModel.userName
-        userReputationLabel.text = viewModel.userReputation
-        configureAvatarImage(urlString: viewModel.userAvatar)
-        configureElements()
+        configureElements(viewModel: viewModel)
         configureLayout()
+        configureExpandableCell()
     }
 
-    public override func prepareForReuse() {
-        super.prepareForReuse()
-        userNameLabel.text = ""
-        userReputationLabel.text = ""
-        userAvatar.image = nil
+    public override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        toggleExpanded()
     }
 
     // MARK: Private methods
@@ -57,26 +56,44 @@ public final class UserCell: UITableViewCell {
         }
     }
 
-    private func configureElements() {
-        guard let viewModel = self.viewModel else { return }
-        configureAvatar()
+    private func configureElements(viewModel: UserCellViewModelType) {
+        configureAvatarImage(urlString: viewModel.userAvatar)
+        configureAvatar(viewModel: viewModel)
+        configureBadge(viewModel: viewModel)
         configureLabels(viewModel: viewModel)
         configureButtons(viewModel: viewModel)
     }
 
-    private func configureAvatar() {
+    private func configureAvatar(viewModel: UserCellViewModelType) {
         userAvatar.translatesAutoresizingMaskIntoConstraints = false
         userAvatar.layer.cornerRadius = Sizing.avatar.width / 2
         userAvatar.clipsToBounds = true
+        userAvatar.alpha = viewModel.isBlocking ? 0.5 : 1.0
 
         contentView.addSubview(userAvatar)
     }
 
+    private func configureBadge(viewModel: UserCellViewModelType) {
+        badge.translatesAutoresizingMaskIntoConstraints = false
+        badge.isHidden = !viewModel.isFollowing && !viewModel.isBlocking
+        badge.image = viewModel.isFollowing
+            ? ImageCollection.followBadgeIcon
+            : ImageCollection.blockBadgeIcon
+
+        contentView.addSubview(badge)
+    }
+
     private func configureLabels(viewModel: UserCellViewModelType) {
+        userNameLabel.text = viewModel.userName
         userNameLabel.font = FontPallete.title
         userNameLabel.textColor = ColorPalette.text
+        userNameLabel.alpha = viewModel.isBlocking ? 0.5 : 1.0
+
+        userReputationLabel.text = viewModel.userReputation
         userReputationLabel.font =  FontPallete.subtitle
         userReputationLabel.textColor = ColorPalette.text
+        userReputationLabel.alpha = viewModel.isBlocking ? 0.5 : 1.0
+
         labelsStackView = StackViewFactory.makeLabelStackView(subViews: [userNameLabel, userReputationLabel])
 
         contentView.addSubview(labelsStackView)
@@ -111,6 +128,11 @@ public final class UserCell: UITableViewCell {
             userAvatar.widthAnchor.constraint(equalToConstant: Sizing.avatar.width),
             userAvatar.heightAnchor.constraint(equalToConstant: Sizing.avatar.height),
 
+            badge.topAnchor.constraint(equalTo: userAvatar.bottomAnchor, constant: -Spacing.large),
+            badge.leftAnchor.constraint(equalTo: userAvatar.rightAnchor, constant: -Spacing.small),
+            badge.widthAnchor.constraint(equalToConstant: Sizing.badge.width),
+            badge.heightAnchor.constraint(equalToConstant: Sizing.badge.height),
+
             labelsStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Spacing.large),
             labelsStackView.leftAnchor.constraint(equalTo: userAvatar.rightAnchor, constant: Spacing.large),
             labelsStackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: Spacing.large * -1),
@@ -120,9 +142,29 @@ public final class UserCell: UITableViewCell {
 
             buttonsStackView.topAnchor.constraint(equalTo: labelsStackView.bottomAnchor, constant: Spacing.large),
             buttonsStackView.leftAnchor.constraint(equalTo: labelsStackView.leftAnchor),
-            buttonsStackView.rightAnchor.constraint(equalTo: labelsStackView.rightAnchor),
-
-            contentView.bottomAnchor.constraint(equalTo: buttonsStackView.bottomAnchor, constant: Spacing.large)
+            buttonsStackView.rightAnchor.constraint(equalTo: labelsStackView.rightAnchor)
         ])
+    }
+
+    private func configureExpandableCell() {
+        collapsedConstraint = contentView.bottomAnchor.constraint(equalTo: labelsStackView.bottomAnchor,
+                                                                  constant: Spacing.large)
+        expandedConstraint = contentView.bottomAnchor.constraint(equalTo: buttonsStackView.bottomAnchor,
+                                                                 constant: Spacing.large)
+        toggleExpanded()
+    }
+
+    private func toggleExpanded() {
+        isSelected ? setExpanded() : setCollapsed()
+    }
+
+    private func setExpanded() {
+        collapsedConstraint?.isActive = false
+        expandedConstraint?.isActive = true
+    }
+
+    private func setCollapsed() {
+        expandedConstraint?.isActive = false
+        collapsedConstraint?.isActive = true
     }
 }

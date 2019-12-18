@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0109E09023AABF78003D385C /* ImageCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0109E08F23AABF78003D385C /* ImageCollection.swift */; };
 		0126AC5E23A6725600815DAF /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC5D23A6725600815DAF /* UserCell.swift */; };
 		0126AC6023A6725F00815DAF /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC5F23A6725F00815DAF /* UserCellViewModel.swift */; };
 		0126AC6323A67C3500815DAF /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126AC6223A67C3500815DAF /* Spacing.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0109E08F23AABF78003D385C /* ImageCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollection.swift; sourceTree = "<group>"; };
 		0126AC5D23A6725600815DAF /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		0126AC5F23A6725F00815DAF /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		0126AC6223A67C3500815DAF /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				0126AC6E23A6909C00815DAF /* FontPallete.swift */,
 				0126ACB823A7C85300815DAF /* ButtonFactory.swift */,
 				0126ACBA23A7C85B00815DAF /* StackViewFactory.swift */,
+				0109E08F23AABF78003D385C /* ImageCollection.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				0126AC6B23A68FFE00815DAF /* ColorPallete.swift in Sources */,
 				018484F123A63F0A005CD618 /* StackOverflowUser.swift in Sources */,
 				0126ACB923A7C85300815DAF /* ButtonFactory.swift in Sources */,
+				0109E09023AABF78003D385C /* ImageCollection.swift in Sources */,
 				0126AC6023A6725F00815DAF /* UserCellViewModel.swift in Sources */,
 				0126AC6523A67D7A00815DAF /* Sizing.swift in Sources */,
 				01B0266923A6301200D6062E /* SceneDelegate.swift in Sources */,
