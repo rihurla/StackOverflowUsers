@@ -23,4 +23,4 @@ This project adopts MVVM and can be extended to use Coordinators/Routers.
 In order to make the business logic testable, the viewModels and Services are accessed via Protocol with mocks included on the test target.
 
 ## Author
-* **Ricardo Hurla** - [Portfolio](https://rihurla.com)  -  [BitBucket](https://bitbucket.org/rihurla/)  -  [Github](https://github.com/rihurla) - Phone - 0118 999 881 999 119 725 3
+* **Ricardo Hurla** - [Portfolio](https://rihurla.com)  -  [BitBucket](https://bitbucket.org/rihurla/)  -  [Github](https://github.com/rihurla)
